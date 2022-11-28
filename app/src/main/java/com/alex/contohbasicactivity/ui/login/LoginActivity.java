@@ -40,12 +40,15 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        Baca intent
-        String username = getIntent().getStringExtra("username");
-        String password = getIntent().getStringExtra("password");
+//        Baca intent (menerima intent)
+//        String username = getIntent().getStringExtra("nama1"); // nama1 : "Pemrograman"
+//        String password = getIntent().getStringExtra("nama2"); // nama2 : "Mobile"
 
-//        Baca Parcelable
-        ArrayList<Siswa> siswaDiterima = getIntent().getParcelableArrayListExtra("Siswa");
+//        Baca Parcelable Single
+//        Siswa siswa = getIntent().getParcelableExtra("Siswa");
+
+//        Baca Parcelable Array
+//        ArrayList<Siswa> siswaDiterima = getIntent().getParcelableArrayListExtra("Siswa");
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -58,11 +61,11 @@ public class LoginActivity extends AppCompatActivity {
         final Button loginButton = binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
 
-//        usernameEditText.setText(username);
-//        passwordEditText.setText(password);
+//        usernameEditText.setText(siswa.getId() + " " + siswa.getNama() + " " + siswa.getAlamat());
+//        passwordEditText.setText(siswa.getAlamat());
 
-        usernameEditText.setText(siswaDiterima.get(0).getId() + " " + siswaDiterima.get(1).getNama());
-        passwordEditText.setText(siswaDiterima.get(1).getAlamat());
+//        usernameEditText.setText(siswaDiterima.get(0).getId() + " " + siswaDiterima.get(1).getNama() +" " + siswaDiterima.get(1).getAlamat());
+//        passwordEditText.setText(siswaDiterima.get(1).getAlamat());
 
 
 
