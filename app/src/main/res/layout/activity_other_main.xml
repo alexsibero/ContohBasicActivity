@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".OtherMainActivity">
 
     <TextView
         android:id="@+id/textview"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textSize="25dp"
-        android:text="Belajar Android" />
+        android:text="Belajar Android"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/edittext"
@@ -20,12 +20,38 @@
         android:layout_height="50dp"
         android:hint="Isikan Nama Anda" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbpria"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Pria"
+                />
+
+            <RadioButton
+                android:id="@+id/rbwanita"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Wanita" />
+
+        </RadioGroup>
+    </LinearLayout>
+
     <Button
         android:id="@+id/buttonOk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:text="Button OK"/>
+        android:text="Button OK"
+        android:visibility="visible" />
 
     <ImageView
         android:id="@+id/imageView"

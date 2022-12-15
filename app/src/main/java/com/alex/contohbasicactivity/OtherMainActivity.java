@@ -13,7 +13,9 @@ import android.provider.MediaStore;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +28,8 @@ public class OtherMainActivity extends AppCompatActivity {
     Button btn;
     TextView text;
     EditText edit;
+    RadioButton rbpria;
+    RadioButton rbwanita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,8 @@ public class OtherMainActivity extends AppCompatActivity {
         btn = findViewById(R.id.buttonOk);
         text = findViewById(R.id.textview);
         edit = findViewById(R.id.edittext);
+        rbpria = findViewById(R.id.rbpria);
+        rbwanita = findViewById(R.id.rbwanita);
 
         edit.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -45,6 +51,24 @@ public class OtherMainActivity extends AppCompatActivity {
                     btn.setText("Button OK");
                 }
                 return false;
+            }
+        });
+
+        rbpria.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b==true)
+                    edit.setText(rbpria.getText());
+//                rbwanita.setChecked(false);
+            }
+        });
+
+        rbwanita.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b==true)
+                    edit.setText(rbwanita.getText());
+//                rbpria.setChecked(false);
             }
         });
 
