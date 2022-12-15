@@ -10,8 +10,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,13 +25,35 @@ public class OtherMainActivity extends AppCompatActivity {
 
     Button btn;
     TextView text;
+    EditText edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_main2);
-//        btn = findViewById(R.id.buttonOk);
-//        text = findViewById(R.id.textview);
+        setContentView(R.layout.activity_other_main);
+        btn = findViewById(R.id.buttonOk);
+        text = findViewById(R.id.textview);
+        edit = findViewById(R.id.edittext);
+
+        edit.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if(btn.getText()!="")
+                {
+                    btn.setText(edit.getText());
+                } else {
+                    btn.setText("Button OK");
+                }
+                return false;
+            }
+        });
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                edit.setText("");
+            }
+        });
 
 //        FirstFragment firstFragment = new FirstFragment();
 //        firstFragment.setArguments(getIntent().getExtras());
