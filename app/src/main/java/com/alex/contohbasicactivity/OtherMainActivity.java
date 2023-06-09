@@ -2,14 +2,10 @@ package com.alex.contohbasicactivity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -18,10 +14,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.alex.contohbasicactivity.ui.login.LoginActivity;
-
-import java.util.ArrayList;
 
 public class OtherMainActivity extends AppCompatActivity {
 
@@ -40,12 +32,12 @@ public class OtherMainActivity extends AppCompatActivity {
         edit = findViewById(R.id.edittext);
         rbpria = findViewById(R.id.rbpria);
         rbwanita = findViewById(R.id.rbwanita);
+        btn.setText("Button Send");
 
         edit.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if(btn.getText()!="")
-                {
+                if (btn.getText() != "") {
                     btn.setText(edit.getText());
                 } else {
                     btn.setText("Button OK");
@@ -57,7 +49,7 @@ public class OtherMainActivity extends AppCompatActivity {
         rbpria.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b==true)
+                if (b == true)
                     edit.setText(rbpria.getText());
 //                rbwanita.setChecked(false);
             }
@@ -66,7 +58,7 @@ public class OtherMainActivity extends AppCompatActivity {
         rbwanita.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b==true)
+                if (b == true)
                     edit.setText(rbwanita.getText());
 //                rbpria.setChecked(false);
             }
@@ -75,31 +67,33 @@ public class OtherMainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(OtherMainActivity.this,MainActivity.class);
+                startActivity(intent);
                 edit.setText("");
             }
         });
 
-//        FirstFragment firstFragment = new FirstFragment();
-//        firstFragment.setArguments(getIntent().getExtras());
-//
-//        SecondFragment secondFragment = new SecondFragment();
-//        secondFragment.setArguments(getIntent().getExtras());
-//
-//        BlankFragment blankFragment = new BlankFragment();
-//        blankFragment.setArguments(getIntent().getExtras());
-//
-//        // Add the fragment to the 'fragment_container' FrameLayout
-//        getSupportFragmentManager().beginTransaction()
-//                .add(R.id.frag_container, firstFragment).commit();
-//
-//        getSupportFragmentManager().beginTransaction()
-//                .add(R.id.frag_container2, secondFragment).commit();
-//
-//        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
-//        trans = getSupportFragmentManager().beginTransaction();
-//        trans.replace(R.id.frag_container,blankFragment);
-//        trans.addToBackStack(null);
-//        trans.commit();
+        FirstFragment firstFragment = new FirstFragment();
+        firstFragment.setArguments(getIntent().getExtras());
+
+        SecondFragment secondFragment = new SecondFragment();
+        secondFragment.setArguments(getIntent().getExtras());
+
+        BlankFragment blankFragment = new BlankFragment();
+        blankFragment.setArguments(getIntent().getExtras());
+
+        // Add the fragment to the 'fragment_container' FrameLayout
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.frag_container, firstFragment).commit();
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.frag_container2, secondFragment).commit();
+
+        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+        trans = getSupportFragmentManager().beginTransaction();
+        trans.replace(R.id.frag_container,blankFragment);
+        trans.addToBackStack(null);
+        trans.commit();
 //
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
