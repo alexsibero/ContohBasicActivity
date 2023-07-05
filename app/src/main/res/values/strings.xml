@@ -33,4 +33,6 @@
     <string name="payments_show_name" translatable="false">Successfully received payment data for
         %s!
     </string>
+    <string name="tombolUp">Up</string>
+    <string name="tombolDown">Down</string>
 </resources>

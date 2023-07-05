@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/tombolUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnUp"
+        android:layout_marginBottom="36dp"
+        android:text="Sedang belajar Pemrograman Android"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUp"
+        app:layout_constraintEnd_toStartOf="@+id/btnUp"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnUp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnUp"
+        app:layout_constraintStart_toStartOf="@+id/tvText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

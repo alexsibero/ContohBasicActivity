@@ -73,27 +73,27 @@ public class OtherMainActivity extends AppCompatActivity {
             }
         });
 
-        FirstFragment firstFragment = new FirstFragment();
-        firstFragment.setArguments(getIntent().getExtras());
-
-        SecondFragment secondFragment = new SecondFragment();
-        secondFragment.setArguments(getIntent().getExtras());
-
-        BlankFragment blankFragment = new BlankFragment();
-        blankFragment.setArguments(getIntent().getExtras());
-
-        // Add the fragment to the 'fragment_container' FrameLayout
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.frag_container, firstFragment).commit();
-
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.frag_container2, secondFragment).commit();
-
-        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
-        trans = getSupportFragmentManager().beginTransaction();
-        trans.replace(R.id.frag_container,blankFragment);
-        trans.addToBackStack(null);
-        trans.commit();
+//        FirstFragment firstFragment = new FirstFragment();
+//        firstFragment.setArguments(getIntent().getExtras());
+//
+//        SecondFragment secondFragment = new SecondFragment();
+//        secondFragment.setArguments(getIntent().getExtras());
+//
+//        BlankFragment blankFragment = new BlankFragment();
+//        blankFragment.setArguments(getIntent().getExtras());
+//
+//        // Add the fragment to the 'fragment_container' FrameLayout
+//        getSupportFragmentManager().beginTransaction()
+//                .add(R.id.frag_container, firstFragment).commit();
+//
+//        getSupportFragmentManager().beginTransaction()
+//                .add(R.id.frag_container2, secondFragment).commit();
+//
+//        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+//        trans = getSupportFragmentManager().beginTransaction();
+//        trans.replace(R.id.frag_container,blankFragment);
+//        trans.addToBackStack(null);
+//        trans.commit();
 //
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
