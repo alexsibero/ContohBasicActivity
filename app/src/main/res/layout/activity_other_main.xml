@@ -35,6 +35,7 @@
                 android:id="@+id/rbpria"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:textColor="@color/hijau_stabilo"
                 android:text="Pria"
                 />
 
@@ -42,6 +43,7 @@
                 android:id="@+id/rbwanita"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:textColor="@color/hijau_stabilo"
                 android:text="Wanita" />
 
         </RadioGroup>
@@ -49,9 +51,10 @@
 
     <Button
         android:id="@+id/buttonOk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/buy_button_width"
+        android:layout_height="@dimen/buy_button_height"
         android:text="Button OK"
+        style="@style/GreenText"
         android:visibility="visible" />
 
     <ImageView
